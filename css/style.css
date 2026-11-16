@@ -24,3 +24,6 @@
 .quick-grid{gap:8px}.quick{display:block;text-align:center;padding:14px 6px}
 .quick .q-icon{margin:0 auto 8px;width:34px;height:34px}.quick h3{font-size:14px}.quick p{display:none}
 }
+/* 단위 선택 글씨를 기본 입력 글씨보다 2px 작게 표시합니다. */
+.product-panel select[data-key="unit"]{font-size:16px}
+body.large .product-panel select[data-key="unit"]{font-size:17px}
