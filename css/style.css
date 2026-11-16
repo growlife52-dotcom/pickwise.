@@ -107,3 +107,34 @@ body.large .product-panel select[data-key="unit"]{font-size:17px}
  body.records-page:not(.large) .history-actions{margin-top:12px}
  body.records-page:not(.large) .history-actions .secondary{font-size:14px;min-height:44px}
 }
+/* 구매 방식에 맞는 입력만 표시하는 할인·묶음 카드 */
+.purchase-options{background:#f9f8f9;border:1px solid #d4dfed;border-radius:16px;padding:14px;margin-top:16px}
+.purchase-options h3{font-size:16px;letter-spacing:.4px}
+.purchase-options>.hint{font-size:13px;margin:6px 0 10px}
+.purchase-modes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.purchase-mode{position:relative;display:flex;flex-direction:column;gap:5px;min-height:88px;margin:0;border:1px solid #d4dfed;border-radius:13px;padding:11px;background:#fff;cursor:pointer}
+.purchase-mode svg{color:var(--blue)}
+.purchase-mode strong{font-size:14px;font-weight:500}.purchase-mode small{font-size:12px;color:#647b96;font-weight:400}
+.purchase-mode input,.discount-pill input{position:absolute;opacity:0;width:1px;height:1px;min-height:0;margin:0;padding:0}
+.purchase-mode:has(input:checked),.discount-pill:has(input:checked){background:var(--soft);border-color:var(--blue)}
+.purchase-mode:has(input:focus-visible),.discount-pill:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:2px}
+.purchase-box{border:1px solid #d4dfed;background:#fff;border-radius:13px;padding:12px;margin-top:10px}
+.purchase-box label{font-size:14px;font-weight:400;margin-bottom:6px}
+.purchase-box .field{margin-top:0}.purchase-box .field+.field{margin-top:0}
+.purchase-box input:not([type=radio]){font-size:16px;min-height:42px;padding:8px 12px;border-radius:22px}
+.purchase-box .hint{font-size:12px;line-height:1.5;margin-top:6px}
+.discount-pills{display:flex;flex-wrap:wrap;gap:7px}
+.discount-pill{display:flex;align-items:center;justify-content:center;position:relative;padding:7px 11px;min-height:40px;border:1px solid #d4dfed;border-radius:24px;background:#f9f8f9;cursor:pointer;font-size:13px!important;margin:0!important}
+.purchase-box #rate-wrap-0 .field,.purchase-box #rate-wrap-1 .field{margin-top:12px}
+.extra-costs{padding:10px 12px}.extra-costs summary{font-size:14px;min-height:30px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-weight:500}
+.extra-costs summary::-webkit-details-marker{display:none}.extra-costs summary:after{content:'⌄';color:#647b96}.extra-costs[open] summary:after{content:'⌃'}
+.extra-costs .field-row{margin-top:6px;gap:10px}
+/* 비교하기 화면의 카드 높이와 여백을 조금 줄입니다. */
+.compare-page .page-intro{margin-bottom:18px}.compare-page .page-intro h1{font-size:24px}.compare-page .page-intro p{font-size:14px}
+.compare-page .panel{padding:20px;margin-bottom:16px}.compare-page .panel h2{font-size:20px}
+.compare-page .name-field{margin-top:14px}.compare-page .product-panel h2{margin-bottom:12px}
+.compare-page .field{margin-top:12px}.compare-page .field label{margin-bottom:5px}
+.compare-page .field input,.compare-page .field select,.compare-page #common-name{min-height:46px;padding:9px 12px}
+.compare-page .product{padding:9px 4px 7px;gap:2px}.compare-page .product-illustration{font-size:27px}
+.compare-page .slider{margin-top:8px}.compare-page .purchase-box .field{margin-top:0}
+@media(max-width:700px){.compare-page .panel{padding:16px}.compare-page .page-intro .eyebrow{margin-bottom:6px;font-size:12px}.compare-page .page-intro h1{font-size:23px}.purchase-options{padding:11px}.purchase-mode{padding:10px;min-height:84px}.purchase-box{padding:10px}.purchase-mode small{font-size:11px}.purchase-mode strong{font-size:13px}}
