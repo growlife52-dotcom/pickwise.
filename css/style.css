@@ -24,3 +24,8 @@
 .quick-grid{gap:8px}.quick{display:block;text-align:center;padding:14px 6px}
 .quick .q-icon{margin:0 auto 8px;width:34px;height:34px}.quick h3{font-size:14px}.quick p{display:none}
 }
+
+/* 용량을 조절하는 동안 현재 숫자를 한눈에 확인합니다. */
+.amount-current{display:flex;align-items:baseline;gap:10px;margin-top:18px;font-size:14px;color:var(--muted)}
+.amount-current output{font-size:28px;line-height:1.4;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;overflow-wrap:anywhere;min-width:0}
+.amount-current+.slider{margin-top:8px}
