@@ -196,3 +196,11 @@ body.large .product-panel select[data-key="unit"]{font-size:17px}
  .result-page:not(.large) .result-hero{margin-bottom:6px}
  .result-page:not(.large) .actions{margin-top:8px}
 }
+/* 기록에서 단위가격이 저렴했던 상품을 글자와 테두리로 함께 표시합니다. */
+.history-prices>.history-price-item{border:1px solid transparent}
+.history-prices>.history-price-winner{border-color:var(--blue);background:#edf3fb}
+.history-price-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:3px 5px;margin-bottom:3px}
+.history-price-heading>span:first-child{font-weight:700;color:var(--ink)}
+.history-prices .history-winner-badge,.history-prices .history-tie-badge{display:inline-block;font-size:11px;line-height:1.5;padding:2px 5px;border-radius:5px;white-space:nowrap}
+.history-prices .history-winner-badge{background:var(--blue);color:#fff;font-weight:650}
+.history-prices .history-tie-badge{background:#e4e9f0;color:#526b88}
