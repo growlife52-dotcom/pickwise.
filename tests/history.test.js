@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {buildHistory,previousRecord,priceChange} from '../js/history.js';
+const p=(extra={})=>({name:'우유',price:3000,amount:500,unit:'mL',bundle:1,discount:'none',rate:0,coupon:0,shipping:0,...extra});
+const record=(id,date,extra={})=>({id,date,products:[p(extra),p(extra)]});
+test('기록 날짜 정렬과 상품별 이전 기록 찾기',()=>{const h=buildHistory([record('old','2026-11-01'),record('other','2026-11-03',{name:'생수'}),record('new','2026-11-04')]);assert.equal(h[0].id,'new');assert.equal(previousRecord(h,h[0]).id,'old');assert.equal(previousRecord(h,h[2]),null);});
+test('용량과 할인 조건이 달라도 단위가격으로 비교',()=>{const h=buildHistory([record('old','2026-11-01'),record('new','2026-11-04',{amount:1,unit:'L',discount:'one',price:6000})]);assert.equal(h[0].result.items[0].unitPrice,300);assert.equal(h[1].result.items[0].unitPrice,600);assert.equal(priceChange(600,300).percent,-50);});
+test('다른 단위 종류 및 상품은 가격 변화를 비교하지 않음',()=>{const h=buildHistory([record('old','2026-11-01'),record('new','2026-11-04',{unit:'g'})]);assert.equal(previousRecord(h,h[0]),null);});
+test('잘못된 기록을 제외하고 이전 저장 계산값을 신뢰하지 않음',()=>{const h=buildHistory([record('bad','invalid'),record('negative','2026-11-01',{price:-1}),{...record('ok','2026-11-02'),calculated:[]}]);assert.equal(h.length,1);assert.equal(h[0].result.items[0].unitPrice,600);});
+test('이전 가격이 0원인 경우 변화율을 억지로 계산하지 않음',()=>{assert.deepEqual(priceChange(0,100),{difference:100,percent:null});assert.equal(priceChange(100,100).percent,0);});

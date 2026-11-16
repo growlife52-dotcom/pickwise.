@@ -27,3 +27,38 @@
 /* 단위 선택 글씨를 기본 입력 글씨보다 2px 작게 표시합니다. */
 .product-panel select[data-key="unit"]{font-size:16px}
 body.large .product-panel select[data-key="unit"]{font-size:17px}
+/* 장보기 기록: 요약 → 최근 비교 → 단위가격 변화 → 다시 불러오기 */
+.history-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+.history-stats>div{background:#fff;border:1px solid #d4dfed;border-radius:16px;padding:20px}
+.history-stats>div+div{background:var(--soft)}
+.history-stats span{display:block;color:#526b88;font-size:14px}
+.history-stats strong{display:block;font-size:29px;line-height:1.4;margin-top:8px}
+.history-stats small{font-size:15px;font-weight:400;margin-left:5px;color:#526b88}
+.history-empty{text-align:center;padding:30px 24px}
+.empty-basket{width:64px;height:64px;background:var(--soft);color:var(--blue);font-size:34px;border-radius:50%;display:grid;place-items:center;margin:0 auto 16px}
+.history-empty h2{font-size:21px}.history-empty p{font-size:15px;margin:8px 0 20px}
+.history-card{border-color:#d4dfed}
+.history-card-head{display:flex;align-items:flex-start;gap:14px}
+.history-card-head>div{min-width:0;flex:1}
+.history-card-head h3{font-size:18px;overflow-wrap:anywhere}
+.history-card-head p{font-size:14px;margin-top:4px}
+.history-icon{width:52px;height:52px;flex-shrink:0;display:grid;place-items:center;border-radius:13px;background:#eef2f8}
+.history-icon .product-illustration{font-size:31px}
+.history-card-head time{font-size:13px;color:var(--muted);white-space:nowrap}
+.history-conclusion{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #d4dfed;margin-top:18px;padding-top:14px;font-size:15px}
+.history-conclusion strong{color:var(--blue);white-space:nowrap;font-size:15px;background:#edf2f8;border-radius:8px;padding:4px 9px}
+.history-prices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.history-prices>div{background:#f6f8fb;border-radius:12px;padding:12px}
+.history-prices span,.history-prices small{display:block;font-size:13px;color:#61738b}
+.history-prices strong{display:block;font-size:22px;margin:4px 0;font-variant-numeric:tabular-nums}
+.history-actions{display:flex;align-items:center;gap:10px;margin-top:18px}
+.history-actions .secondary{flex:1;background:var(--blue);border-color:var(--blue);color:white;padding:10px 12px;font-size:15px}
+.history-delete{background:transparent;min-width:52px;color:#687c94;font-size:14px}
+.price-history{margin-top:18px}.price-history summary{font-size:15px;display:list-item}
+.history-note{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.6}
+.trend-rows{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.trend-rows>div{padding:12px;background:#f6f8fb;border-radius:12px}
+.trend-rows p{font-size:14px}.trend-rows span{font-size:14px;font-weight:650;color:var(--blue)}
+.sample-label{font-size:12px;background:#f0f1f3;border-radius:6px;padding:3px 7px;white-space:nowrap}
+.history-storage-note{font-size:14px;color:#63758c;margin-top:20px}
+@media(max-width:700px){.history-stats{gap:10px}.history-stats>div{padding:16px}.history-card-head{gap:10px;flex-wrap:wrap}.history-card-head time{width:100%;text-align:right}.history-card-head h3{font-size:17px}.history-icon{width:44px;height:44px}.history-conclusion{font-size:14px;gap:6px}.history-conclusion strong{font-size:13px;padding:4px 7px}.history-empty h2{font-size:20px}.history-empty p{font-size:14px}.trend-rows{grid-template-columns:1fr}.history-prices strong{font-size:21px}.history-prices>div{padding:10px}}
