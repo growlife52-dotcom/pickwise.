@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {calculate,compare} from '../js/calculator.js';
+const p=(extra={})=>({name:'우유',price:3000,amount:500,unit:'mL',bundle:1,discount:'none',rate:0,coupon:0,shipping:0,...extra});
+test('mL와 L를 같은 기준으로 비교',()=>{const r=compare([p(),p({amount:1,unit:'L',price:5000})]);assert.equal(r.winner,1);assert.equal(r.items[1].unitPrice,500);assert.ok(Math.abs(r.percent-100/6)<1e-10);});
+test('kg와 g 동률',()=>assert.equal(compare([p({unit:'kg',amount:1}),p({unit:'g',amount:1000})]).winner,null));
+test('묶음과 1+1을 별개로 적용',()=>{const r=calculate(p({bundle:20,discount:'one'}));assert.equal(r.quantity,20000);assert.equal(r.payment,3000);});
+test('2+1은 두 묶음 결제',()=>{const r=calculate(p({discount:'two',coupon:1000,shipping:500}));assert.equal(r.payment,5500);assert.equal(r.quantity,1500);});
+test('할인율 후 쿠폰과 배송비 적용',()=>assert.equal(calculate(p({discount:'rate',rate:20,coupon:400,shipping:500})).payment,2500));
+test('100% 할인과 무료 상품 동률',()=>assert.equal(compare([p({discount:'rate',rate:100}),p({discount:'rate',rate:100})]).winner,null));
+test('473mL 및 슬라이더 범위 밖 수량 유지',()=>{assert.equal(calculate(p({amount:473})).quantity,473);assert.equal(calculate(p({amount:5000})).quantity,5000);});
+test('다른 차원의 단위 차단',()=>assert.throws(()=>compare([p(),p({unit:'g'})]),/같은 종류/));
+test('음수, 0, 비정상 숫자 차단',()=>{for(const extra of [{price:0},{amount:-1},{price:'abc'},{bundle:0},{bundle:1.5},{shipping:-1},{rate:101},{coupon:4000},{name:''}])assert.throws(()=>calculate(p(extra)));});
