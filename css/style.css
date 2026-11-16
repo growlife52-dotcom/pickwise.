@@ -138,3 +138,57 @@ body.large .product-panel select[data-key="unit"]{font-size:17px}
 .compare-page .product{padding:9px 4px 7px;gap:2px}.compare-page .product-illustration{font-size:27px}
 .compare-page .slider{margin-top:8px}.compare-page .purchase-box .field{margin-top:0}
 @media(max-width:700px){.compare-page .panel{padding:16px}.compare-page .page-intro .eyebrow{margin-bottom:6px;font-size:12px}.compare-page .page-intro h1{font-size:23px}.purchase-options{padding:11px}.purchase-mode{padding:10px;min-height:84px}.purchase-box{padding:10px}.purchase-mode small{font-size:11px}.purchase-mode strong{font-size:13px}}
+/* 결과 화면은 핵심 숫자를 유지하면서 카드 높이와 여백을 줄입니다. */
+.result-card-title{display:flex;align-items:center;justify-content:space-between;gap:5px;flex-wrap:wrap}
+.recommend-badge{display:inline-block;border-radius:6px;background:#e7eef8;color:var(--blue);font-size:11px;font-weight:650;padding:2px 6px;white-space:nowrap}
+.result-page:not(.large) .page-intro{margin-bottom:16px}
+.result-page:not(.large) .page-intro h1{font-size:24px}
+.result-page:not(.large) .eyebrow{font-size:11px;margin-bottom:5px}
+.result-page:not(.large) .result-hero{padding:20px;border-radius:17px;margin-bottom:16px}
+.result-page:not(.large) .result-hero h2{font-size:19px;line-height:1.5;letter-spacing:-.6px}
+.result-page:not(.large) .result-hero .percent{font-size:30px;line-height:1.35;margin:6px 0}
+.result-page:not(.large) .result-hero p{font-size:13px}
+.result-page:not(.large) .result-grid{gap:12px}
+.result-page:not(.large) .result-grid .panel{padding:16px;margin-bottom:14px;border-radius:15px}
+.result-page:not(.large) .result-card-title{font-size:16px;line-height:1.4}
+.result-page:not(.large) .result-grid p{font-size:13px;line-height:1.55;overflow-wrap:anywhere}
+.result-page:not(.large) .price{font-size:23px;line-height:1.35;margin:6px 0 2px;overflow-wrap:anywhere}
+.result-page:not(.large) .metric{margin-top:10px;padding-top:10px}
+.result-page:not(.large) .metric strong{font-size:21px;line-height:1.4;overflow-wrap:anywhere}
+.result-page:not(.large) aside.panel{padding:16px;margin-bottom:14px;border-radius:15px}
+.result-page:not(.large) aside h3{font-size:16px}
+.result-page:not(.large) aside .hint{font-size:13px;line-height:1.55;margin-top:5px}
+.result-page:not(.large) .actions{margin-top:14px;gap:8px}
+.result-page:not(.large) .actions button{min-height:44px;font-size:14px;padding:9px 13px}
+@media(max-width:700px){
+ .result-page:not(.large) header{height:56px}
+ .result-page:not(.large) main{padding-top:10px;padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+ .result-page:not(.large) footer{display:none}
+ .result-page:not(.large) .page-intro{margin-bottom:12px}
+ .result-page:not(.large) .page-intro h1{font-size:22px;line-height:1.4}
+ .result-page:not(.large) .eyebrow{display:none}
+ .result-page:not(.large) .result-hero{padding:16px 12px;margin-bottom:12px}
+ .result-page:not(.large) .result-hero h2{font-size:17px}
+ .result-page:not(.large) .result-hero .percent{font-size:28px;margin:4px 0}
+ .result-page:not(.large) .result-hero p{font-size:12px}
+ .result-page:not(.large) .result-grid{gap:10px}
+ .result-page:not(.large) .result-grid .panel{padding:12px;margin-bottom:12px}
+ .result-page:not(.large) .result-card-title{font-size:15px}
+ .result-page:not(.large) .result-grid p{font-size:12px}
+ .result-page:not(.large) .price{font-size:22px}
+ .result-page:not(.large) .metric strong{font-size:19px}
+ .result-page:not(.large) aside.panel{padding:12px}
+ .result-page:not(.large) aside h3{font-size:15px}
+ .result-page:not(.large) aside .hint{font-size:12px}
+ .result-page:not(.large) .actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px}
+ .result-page:not(.large) .actions button{padding:9px 5px;font-size:13px}
+}
+@media(max-width:700px){
+ .result-page:not(.large) header{height:52px}
+ .result-page:not(.large) .page-intro{margin-bottom:8px}
+ .result-page:not(.large) .result-hero{padding:12px}
+ .result-page:not(.large) .result-grid .panel{padding:10px}
+ .result-page:not(.large) .metric{margin-top:7px;padding-top:7px}
+ .result-page:not(.large) aside.panel{margin-bottom:10px}
+ .result-page:not(.large) .actions{margin-top:10px}
+}
