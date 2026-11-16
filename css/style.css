@@ -24,3 +24,30 @@
 .quick-grid{gap:8px}.quick{display:block;text-align:center;padding:14px 6px}
 .quick .q-icon{margin:0 auto 8px;width:34px;height:34px}.quick h3{font-size:14px}.quick p{display:none}
 }
+/* 공통 상품명, 실시간 용량과 필요한 옵션만 보이는 입력 카드 */
+.product-illustration{width:48px;height:48px;vertical-align:middle}
+.hero-art .product-illustration{width:52px;height:60px}
+.product[aria-pressed="true"]{border-color:var(--blue);background:#edf2f9}
+.more-products{display:block;margin:12px auto 0;background:transparent;color:var(--blue);font-size:14px;min-height:44px}
+.amount-current{margin-top:20px;display:flex;align-items:baseline;gap:10px;color:var(--muted);font-size:14px}
+.amount-current output{font-size:27px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.slider{margin-top:4px;gap:12px}
+.slider button{min-width:48px;min-height:52px}
+.slider input[type="range"]{appearance:none;-webkit-appearance:none;height:52px;min-height:52px;background:transparent;border:0;cursor:pointer}
+.slider input[type="range"]::-webkit-slider-runnable-track{height:8px;background:#dbe2ef;border-radius:9px}
+.slider input[type="range"]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:30px;height:30px;border:4px solid white;border-radius:50%;background:var(--blue);box-shadow:0 1px 5px #112d4e40;margin-top:-11px}
+.slider input[type="range"]::-moz-range-track{height:8px;background:#dbe2ef;border-radius:9px}
+.slider input[type="range"]::-moz-range-thumb{width:24px;height:24px;border:4px solid white;border-radius:50%;background:var(--blue);box-shadow:0 1px 5px #112d4e40}
+.discount-section{border:1px solid var(--line);background:#fafbfd;border-radius:14px;margin-top:22px;padding:16px}
+.discount-section h3{font-size:16px}.discount-section .hint{margin-top:4px}
+.discount-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin-top:12px}
+.discount-choice{min-height:48px;justify-content:center;position:relative;padding:8px 2px;font-size:14px;background:transparent;border-color:transparent;white-space:nowrap}
+.discount-choice input{position:absolute;opacity:0;width:1px;height:1px;min-height:0}
+.discount-choice:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:2px}
+.discount-choice:has(input:checked){background:var(--soft);border-color:#becde0;color:var(--ink)}
+.field-error{color:#a12e37;font-size:14px;margin-top:6px}
+input[aria-invalid="true"]{border:2px solid #a12e37;background:#fffafa}
+.product-panel>h2{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:0}
+.result-grid .panel{position:relative}.result-grid .winner{background:#f8fbff}
+.result-grid h3{margin-bottom:10px}.result-grid .metric:first-of-type{background:#edf2f9;padding:14px;border-radius:12px;border:0}
+@media(max-width:700px){.discount-section{padding:12px}.product-illustration{width:42px;height:42px}.amount-current output{font-size:26px}}
