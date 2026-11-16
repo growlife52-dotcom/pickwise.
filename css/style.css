@@ -192,3 +192,7 @@ body.large .product-panel select[data-key="unit"]{font-size:17px}
  .result-page:not(.large) aside.panel{margin-bottom:10px}
  .result-page:not(.large) .actions{margin-top:10px}
 }
+@media(max-width:700px){
+ .result-page:not(.large) .result-hero{margin-bottom:6px}
+ .result-page:not(.large) .actions{margin-top:8px}
+}
